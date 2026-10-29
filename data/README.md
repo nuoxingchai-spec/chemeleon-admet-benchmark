@@ -6,6 +6,8 @@ used by the released models, not the original downloads.
 - `processed/global_split.csv` and `processed/splits/*.csv`: scaffold-disjoint
   assignment of every compound (fit / early stop / calibration / test).
 - `chemprop/{herg,dili,ames}/`: training tables for the benchmark models.
+- `chemprop_deploy/{herg,dili,ames}/`: fit / early-stop / calibration / test
+  tables for the clean deployment models.
 - `chemprop/lowdata/`: the 48 low-data training subsets.
 - `chemprop/multitask/`: pooled three-endpoint tables.
 - `chemprop/herg_aligned/`: threshold-aligned hERG tables and the cleaned Karim
