@@ -23,8 +23,8 @@ MANIFEST_weights.csv # 93 checkpoints with sizes and SHA-256
 ## Predictor quick start
 
 The nine deployment checkpoints are distributed as the
-`admet_predictor_weights.zip` release asset. Download it, unpack it, and copy
-`models/*.pt` into `admet_predictor/models/`:
+`admet_predictor_weights.zip` release asset. Download and unpack it, then copy
+`admet_predictor_weights/models/*.pt` into `admet_predictor/models/`:
 
 ```
 pip install -r admet_predictor/requirements.txt

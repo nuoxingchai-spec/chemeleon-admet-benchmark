@@ -23,9 +23,9 @@ admet_predictor/
 ```
 
 The nine checkpoints are distributed as the `admet_predictor_weights.zip`
-release asset. Unpack it and copy `models/*.pt` into `admet_predictor/models/`.
-The repository itself stays small; the benchmark checkpoints are in separate
-release assets.
+release asset. Unpack it and copy `admet_predictor_weights/models/*.pt` into
+`admet_predictor/models/`. The repository itself stays small; the benchmark
+checkpoints are in separate release assets.
 
 ## Install
 
