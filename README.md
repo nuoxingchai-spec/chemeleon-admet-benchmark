@@ -40,8 +40,16 @@ The deployment checkpoints use an internal scaffold-disjoint early-stopping
 split carved out of the training data. The global validation split is therefore
 clean and is used only to fit the temperature (n = 62 hERG, 44 DILI, 712 Ames).
 The paper's benchmark models use the original protocol and are reported
-separately. The external Karim refit is a sensitivity artifact, not the shipped
-calibrator; see the model card.
+separately. On the untouched deployment test splits:
+
+| Endpoint | n | AUC | ECE raw | ECE calibrated |
+|---|---|---|---|---|
+| hERG | 59 | 0.8768 | 0.1858 | 0.1215 |
+| DILI | 51 | 0.9013 | 0.1608 | 0.1214 |
+| Ames | 732 | 0.8209 | 0.1409 | 0.0814 |
+
+The external Karim refit is a sensitivity artifact, not the shipped calibrator;
+see the model card.
 
 ## Checkpoints
 
