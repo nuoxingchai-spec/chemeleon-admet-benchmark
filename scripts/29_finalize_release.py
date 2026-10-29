@@ -95,7 +95,7 @@ def main() -> None:
         if not path.exists():
             raise FileNotFoundError(path)
         lines.append(f"{sha256(path)}  {relative}")
-    (RELEASE / "SHA256SUMS").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (RELEASE / "SHA256SUMS").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print(f"wrote {RELEASE / 'SHA256SUMS'} ({len(lines)} files)")
 
 
