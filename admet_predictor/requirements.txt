@@ -1,0 +1,11 @@
+chemprop==2.3.1
+torch>=2.4
+lightning>=2.4
+numpy>=2.0
+pandas>=2.2
+rdkit>=2024.3
+scikit-learn>=1.4
+fastapi>=0.110
+uvicorn>=0.29
+gradio>=5
+httpx>=0.27

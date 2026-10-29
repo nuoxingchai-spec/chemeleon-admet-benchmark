@@ -1,0 +1,31 @@
+{
+  "endpoint": "herg",
+  "source": "Karim hERG, compounds and Murcko scaffolds overlapping local data removed",
+  "n": 11899,
+  "positives": 5844,
+  "external_T": 20.0,
+  "external_T_at_bound": true,
+  "internal_T": 4.248222,
+  "external": {
+    "auc": 0.631964,
+    "ece_raw": 0.401149,
+    "ece_with_external_T": 0.07596,
+    "ece_with_internal_T": 0.252583,
+    "brier_raw": 0.409895,
+    "brier_external_T": 0.245462
+  },
+  "local_test": {
+    "n": 59,
+    "ece_internal_T": 0.121493,
+    "ece_external_T": 0.20785,
+    "brier_internal_T": 0.141251,
+    "brier_external_T": 0.197739
+  },
+  "decision": "external refit kept as a sensitivity artifact; shipped calibrator stays on the internal clean split",
+  "caveats": [
+    "Karim labels hERG blockade at 10 uM; local training labels use a ~40 uM boundary",
+    "external_clean is scaffold-disjoint and therefore out-of-domain (AUC 0.60-0.65 in the paper)",
+    "no independent labelled external set exists for DILI or Ames in this project"
+  ],
+  "created": "2026-10-29"
+}

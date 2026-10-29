@@ -1,0 +1,77 @@
+{
+  "herg": {
+    "n": {
+      "fit": 427,
+      "es": 58,
+      "calib": 62,
+      "test": 59
+    },
+    "pos": {
+      "fit": 295,
+      "es": 40,
+      "calib": 36,
+      "test": 42
+    },
+    "n_scaffolds": {
+      "fit": 291,
+      "es": 22,
+      "calib": 36,
+      "test": 33
+    },
+    "scaffold_overlap_fit_es": 0,
+    "scaffold_overlap_train_calib": 0,
+    "scaffold_overlap_train_test": 0,
+    "es_fraction": 0.1196,
+    "rule": "scaffold-level greedy targeting 12% of compounds and positives; global valid kept for calibration"
+  },
+  "dili": {
+    "n": {
+      "fit": 334,
+      "es": 45,
+      "calib": 44,
+      "test": 51
+    },
+    "pos": {
+      "fit": 168,
+      "es": 23,
+      "calib": 23,
+      "test": 22
+    },
+    "n_scaffolds": {
+      "fit": 248,
+      "es": 20,
+      "calib": 38,
+      "test": 39
+    },
+    "scaffold_overlap_fit_es": 0,
+    "scaffold_overlap_train_calib": 0,
+    "scaffold_overlap_train_test": 0,
+    "es_fraction": 0.1187,
+    "rule": "scaffold-level greedy targeting 12% of compounds and positives; global valid kept for calibration"
+  },
+  "ames": {
+    "n": {
+      "fit": 5106,
+      "es": 696,
+      "calib": 712,
+      "test": 732
+    },
+    "pos": {
+      "fit": 2750,
+      "es": 392,
+      "calib": 426,
+      "test": 377
+    },
+    "n_scaffolds": {
+      "fit": 2218,
+      "es": 48,
+      "calib": 283,
+      "test": 289
+    },
+    "scaffold_overlap_fit_es": 0,
+    "scaffold_overlap_train_calib": 0,
+    "scaffold_overlap_train_test": 0,
+    "es_fraction": 0.12,
+    "rule": "scaffold-level greedy targeting 12% of compounds and positives; global valid kept for calibration"
+  }
+}

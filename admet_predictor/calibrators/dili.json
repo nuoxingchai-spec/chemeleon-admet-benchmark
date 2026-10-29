@@ -1,0 +1,38 @@
+{
+  "endpoint": "dili",
+  "method": "temperature",
+  "T": 0.855638,
+  "logit_eps": 1e-06,
+  "seed_ensemble": [
+    1,
+    2,
+    42
+  ],
+  "fit": {
+    "split": "global valid (calibration only)",
+    "n": 44,
+    "positives": 23,
+    "source": "global scaffold-disjoint split",
+    "used_for_early_stopping": false,
+    "early_stopping": "internal scaffold-disjoint split carved from train (12% of compounds)"
+  },
+  "reference_test": {
+    "n": 51,
+    "positives": 22,
+    "auc": 0.901254,
+    "ece_raw": 0.160799,
+    "ece_calibrated": 0.12144,
+    "brier_raw": 0.135079,
+    "brier_calibrated": 0.131847
+  },
+  "deployment_models": {
+    "description": "CheMeleon fine-tuned with internal early stopping; calibration split never used for model selection",
+    "seeds": [
+      1,
+      2,
+      42
+    ],
+    "train_fraction": 0.88
+  },
+  "created": "2026-10-29"
+}

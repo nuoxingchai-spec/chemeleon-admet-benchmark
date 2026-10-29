@@ -1,0 +1,17 @@
+This product contains fine-tuned weights derived from CheMeleon.
+
+CheMeleon
+  Deep Learning Foundation Models from Classical Molecular Descriptors.
+  Burns, Zalte, Abreu, Sieg, Feldmann, Mathea, Green (2025), arXiv:2506.15792.
+  https://github.com/JacksonBurns/CheMeleon
+  Licensed under the MIT License.
+
+Chemprop
+  Yang et al. (2019), J. Chem. Inf. Model. 59, 3370-3388;
+  Heid et al. (2024), J. Chem. Inf. Model. 64, 8178-8192.
+  Used as the training and inference library under its own license.
+
+The fine-tuned hERG, DILI, and Ames weights, the calibration parameters, and
+all code in this bundle are released under the MIT License (see LICENSE).
+The training labels derive from the Therapeutics Data Commons collections and
+remain subject to the terms of their original sources.

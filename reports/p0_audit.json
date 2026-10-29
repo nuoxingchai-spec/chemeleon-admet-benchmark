@@ -1,0 +1,122 @@
+{
+  "local": {
+    "rows": 655,
+    "invalid_smiles": 0,
+    "unique_full_inchikey": 615,
+    "duplicate_inchikey_rows": 40,
+    "class_counts": {
+      "0": 204,
+      "1": 451
+    },
+    "pIC50_available": 526,
+    "pIC50_missing": 129,
+    "class0_pIC50_max": 4.3819518,
+    "class1_pIC50_min": 4.4000077,
+    "salts_or_mixtures": 12,
+    "charged": 302,
+    "split_I": {
+      "Training I": 392,
+      "Test I": 195,
+      "External validation": 68
+    },
+    "split_II": {
+      "Training II": 392,
+      "Test II": 195,
+      "External validation": 68
+    }
+  },
+  "tdc_herg": {
+    "rows": 655,
+    "invalid_smiles": 0,
+    "unique_full_inchikey": 615,
+    "class_counts": {
+      "0.0": 204,
+      "1.0": 451
+    }
+  },
+  "overlap_local_vs_tdc_herg": {
+    "skeleton_overlap_local_in_tdc": 567,
+    "skeleton_overlap_tdc_in_local": 567,
+    "full_overlap_local_in_tdc": 615,
+    "local_coverage_by_tdc": 1.0,
+    "tdc_coverage_by_local": 1.0,
+    "local_in_tdc_by_SetI": {
+      "External validation": 68,
+      "Test I": 195,
+      "Training I": 392
+    },
+    "local_in_tdc_by_SetII": {
+      "External validation": 68,
+      "Test II": 195,
+      "Training II": 392
+    }
+  },
+  "split_types": {
+    "SetI": {
+      "test_vs_train": {
+        "n_train": 392,
+        "n_test": 195,
+        "train_scaffolds": 264,
+        "test_scaffolds": 138,
+        "test_scaffolds_seen_in_train": 52,
+        "test_scaffold_coverage": 0.3768,
+        "test_compounds_with_seen_scaffold_frac": 0.5282
+      },
+      "external_vs_train": {
+        "n_train": 392,
+        "n_test": 68,
+        "train_scaffolds": 264,
+        "test_scaffolds": 54,
+        "test_scaffolds_seen_in_train": 28,
+        "test_scaffold_coverage": 0.5185,
+        "test_compounds_with_seen_scaffold_frac": 0.6176
+      },
+      "compound_overlap_train_test": 21
+    },
+    "SetII": {
+      "test_vs_train": {
+        "n_train": 392,
+        "n_test": 195,
+        "train_scaffolds": 253,
+        "test_scaffolds": 140,
+        "test_scaffolds_seen_in_train": 43,
+        "test_scaffold_coverage": 0.3071,
+        "test_compounds_with_seen_scaffold_frac": 0.4667
+      },
+      "external_vs_train": {
+        "n_train": 392,
+        "n_test": 68,
+        "train_scaffolds": 253,
+        "test_scaffolds": 54,
+        "test_scaffolds_seen_in_train": 20,
+        "test_scaffold_coverage": 0.3704,
+        "test_compounds_with_seen_scaffold_frac": 0.5
+      },
+      "compound_overlap_train_test": 16
+    }
+  },
+  "other_endpoints": {
+    "dili": {
+      "rows": 475,
+      "invalid_smiles": 0,
+      "unique_full_inchikey": 474,
+      "duplicate_rows": 1,
+      "class_counts": {
+        "0.0": 239,
+        "1.0": 236
+      },
+      "acyclic": 35
+    },
+    "ames": {
+      "rows": 7278,
+      "invalid_smiles": 0,
+      "unique_full_inchikey": 7248,
+      "duplicate_rows": 30,
+      "class_counts": {
+        "0": 3304,
+        "1": 3974
+      },
+      "acyclic": 1268
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "endpoints": [
+    {
+      "endpoint": "herg",
+      "raw_rows": 655,
+      "unique_inchikey": 615,
+      "label_conflict_groups_dropped": 9,
+      "modeling_rows": 606,
+      "class_counts": {
+        "0": 193,
+        "1": 413
+      },
+      "pIC50_available": 483,
+      "scaffolds": 366,
+      "acyclic": 17
+    },
+    {
+      "endpoint": "dili",
+      "raw_rows": 475,
+      "unique_inchikey": 474,
+      "label_conflict_groups_dropped": 0,
+      "modeling_rows": 474,
+      "class_counts": {
+        "0": 238,
+        "1": 236
+      },
+      "pIC50_available": 0,
+      "scaffolds": 310,
+      "acyclic": 35
+    },
+    {
+      "endpoint": "ames",
+      "raw_rows": 7278,
+      "unique_inchikey": 7248,
+      "label_conflict_groups_dropped": 2,
+      "modeling_rows": 7246,
+      "class_counts": {
+        "0": 3301,
+        "1": 3945
+      },
+      "pIC50_available": 0,
+      "scaffolds": 1576,
+      "acyclic": 1258
+    }
+  ],
+  "global_checks": {
+    "scaffold_disjoint": true,
+    "compound_disjoint": true,
+    "split_counts": {
+      "train": 6666,
+      "valid": 818,
+      "test": 842
+    },
+    "split_positives": {
+      "train": 3668,
+      "valid": 485,
+      "test": 441
+    }
+  },
+  "per_endpoint": {
+    "herg": {
+      "split_counts": {
+        "train": 485,
+        "valid": 62,
+        "test": 59
+      },
+      "split_positives": {
+        "train": 335,
+        "valid": 36,
+        "test": 42
+      },
+      "pIC50_in_train": 385
+    },
+    "dili": {
+      "split_counts": {
+        "train": 379,
+        "valid": 44,
+        "test": 51
+      },
+      "split_positives": {
+        "train": 191,
+        "valid": 23,
+        "test": 22
+      },
+      "pIC50_in_train": 0
+    },
+    "ames": {
+      "split_counts": {
+        "train": 5802,
+        "valid": 712,
+        "test": 732
+      },
+      "split_positives": {
+        "train": 3142,
+        "valid": 426,
+        "test": 377
+      },
+      "pIC50_in_train": 0
+    }
+  },
+  "fractions": {
+    "train": 0.8,
+    "valid": 0.1,
+    "test": 0.1
+  },
+  "algorithm": "deterministic greedy scaffold partition, acyclic compounds unique"
+}

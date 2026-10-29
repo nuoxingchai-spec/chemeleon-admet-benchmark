@@ -1,0 +1,38 @@
+{
+  "karim": {
+    "raw_rows": 13445,
+    "standardized": 13445,
+    "unique_after_dedup": 12949,
+    "label_conflict_dropped": 17,
+    "positives": 6476,
+    "negatives": 6473
+  },
+  "overlap": {
+    "full_inchikey_with_local_herg": 458,
+    "skeleton_with_local_herg": 429,
+    "karim_rows_removed": 458,
+    "karim_rows_sharing_local_scaffold": 1047,
+    "external_all_rows": 12491,
+    "external_all_positives": 6196,
+    "external_clean_rows": 11899,
+    "external_clean_positives": 5844
+  },
+  "threshold_alignment": {
+    "rule": "positive pIC50>=5.0, negative pIC50<=4.4, gray 4.4-5.0 and missing pIC50 dropped",
+    "local_rows_before": 606,
+    "local_rows_after": 399,
+    "dropped_gray": 84,
+    "dropped_missing_pIC50": 123,
+    "per_split": {
+      "train": 317,
+      "valid": 41,
+      "test": 41
+    },
+    "per_split_pos": {
+      "train": 236,
+      "valid": 25,
+      "test": 32
+    }
+  },
+  "original_local_threshold_note": "local y = pIC50 >= 4.4089 (40 uM); 83 positives in 4.41-5.0"
+}
