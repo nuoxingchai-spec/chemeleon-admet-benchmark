@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf4ff">
+  <title>CheMeleon ADMET Studio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f6bff'/%3E%3Cstop offset='.5' stop-color='%237cc4ff'/%3E%3Cstop offset='1' stop-color='%23dcecff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Cpath d='M20 40c0-9 6-16 15-16 4 0 7 1 9 3l-4 5c-1-1-3-2-5-2-5 0-8 4-8 9s3 9 8 9c2 0 4-1 5-2l4 5c-2 2-5 3-9 3-9 0-15-6-15-14z' fill='%23080b1f'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="aurora aurora-blue" aria-hidden="true"></div>
+  <div class="aurora aurora-sky" aria-hidden="true"></div>
+  <div class="aurora aurora-ice" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="CheMeleon ADMET Studio home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none">
+          <circle cx="13" cy="24" r="5" fill="currentColor"/>
+          <circle cx="35" cy="13" r="5" fill="currentColor"/>
+          <circle cx="35" cy="35" r="5" fill="currentColor"/>
+          <path d="M17 22l13-7M17 26l13 7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>CheMeleon</strong>
+        <small>ADMET Studio</small>
+      </span>
+    </a>
+    <div class="topbar-right">
+      <span class="version-pill"><span class="pulse"></span> v1.1.0 · clean calibration</span>
+      <a class="ghost-link" href="#about">How it works</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> MOLECULAR SAFETY, VISUALIZED</p>
+        <h1>Read ADMET risk<br><span class="gradient-text">in living color.</span></h1>
+        <p class="lede">
+          A calibrated second opinion for cardiotoxicity, liver injury and mutagenicity.
+          Three endpoints, nine fine-tuned checkpoints, one scaffold-disjoint split.
+        </p>
+        <div class="hero-tags" aria-label="Supported endpoints">
+          <span class="tag tag-blue">hERG blockade</span>
+          <span class="tag tag-sky">DILI</span>
+          <span class="tag tag-deep">Ames mutagenicity</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+        <div class="core">
+          <div class="core-inner">
+            <span class="core-kicker">SEED ENSEMBLE</span>
+            <strong>3 × 3</strong>
+            <span class="core-caption">endpoints × seeds</span>
+          </div>
+        </div>
+        <div class="float-card float-a"><strong>93</strong><span>released checkpoints</span></div>
+        <div class="float-card float-b"><strong>0.82</strong><span>Ames test AUC</span></div>
+        <div class="float-dot dot-a"></div>
+        <div class="float-dot dot-b"></div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <article class="panel input-panel">
+        <header class="panel-head">
+          <div>
+            <p class="kicker">01 · INPUT</p>
+            <h2>Draw the risk profile</h2>
+          </div>
+          <span class="live-pill"><span class="live-dot"></span> CPU ready</span>
+        </header>
+
+        <label class="field-label" for="smiles">SMILES string <span>输入 SMILES</span></label>
+        <textarea id="smiles" class="smiles-input" rows="4" spellcheck="false"
+          placeholder="e.g. CC(=O)Oc1ccccc1C(=O)O">CC(=O)Oc1ccccc1C(=O)O</textarea>
+
+        <div class="input-actions">
+          <button id="predict" class="btn-primary" type="button">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Predict</span>
+          </button>
+          <button id="surprise" class="btn-ghost" type="button">Surprise me</button>
+        </div>
+
+        <div id="input-error" class="error" role="alert"></div>
+
+        <div class="examples">
+          <span class="examples-label">Try a known molecule</span>
+          <div id="examples" class="chips"></div>
+        </div>
+
+        <div class="structure-card">
+          <div class="structure-head">
+            <span>Structure preview</span>
+            <span id="structure-status" class="structure-status">ready</span>
+          </div>
+          <div class="structure-stage">
+            <img id="structure" alt="2D molecular structure preview" hidden>
+            <div id="structure-empty" class="structure-empty">
+              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="13" cy="24" r="5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="35" cy="13" r="5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="35" cy="35" r="5" stroke="currentColor" stroke-width="2"/>
+                <path d="M17 22l13-7M17 26l13 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span>Paste a SMILES string to sketch it</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="input-hint">One molecule at a time · 或使用下方批量模式一次测试多个分子</p>
+      </article>
+
+      <section class="results" aria-live="polite">
+        <header class="results-head">
+          <div>
+            <p class="kicker">02 · OUTPUT</p>
+            <h2>Prediction snapshot</h2>
+          </div>
+          <span id="result-status" class="status-idle">awaiting molecule</span>
+        </header>
+
+        <div class="result-grid">
+          <article class="result-card herg" data-endpoint="herg">
+            <div class="result-top">
+              <div>
+                <span class="endpoint-name">hERG</span>
+                <span class="endpoint-sub">cardiotoxicity</span>
+              </div>
+              <span class="flag" data-role="flag">—</span>
+            </div>
+            <div class="result-main">
+              <div class="ring">
+                <svg viewBox="0 0 128 128" aria-hidden="true">
+                  <circle class="ring-track" cx="64" cy="64" r="54"></circle>
+                  <circle class="ring-fill" cx="64" cy="64" r="54"></circle>
+                </svg>
+                <div class="ring-label">
+                  <strong data-role="prob">—</strong>
+                  <span>calibrated</span>
+                </div>
+              </div>
+              <div class="result-meta">
+                <div class="meter-row">
+                  <span>raw</span>
+                  <div class="meter"><i data-role="raw-bar"></i></div>
+                  <b data-role="raw">—</b>
+                </div>
+                <div class="meter-row">
+                  <span>calibrated</span>
+                  <div class="meter"><i data-role="cal-bar"></i></div>
+                  <b data-role="cal">—</b>
+                </div>
+                <p class="threshold">decision at 0.50</p>
+              </div>
+            </div>
+            <div class="result-foot">
+              <span>temperature</span><b data-role="temp">—</b>
+              <span class="foot-dot"></span>
+              <span>test AUC</span><b data-role="auc">—</b>
+            </div>
+          </article>
+
+          <article class="result-card dili" data-endpoint="dili">
+            <div class="result-top">
+              <div>
+                <span class="endpoint-name">DILI</span>
+                <span class="endpoint-sub">liver injury</span>
+              </div>
+              <span class="flag" data-role="flag">—</span>
+            </div>
+            <div class="result-main">
+              <div class="ring">
+                <svg viewBox="0 0 128 128" aria-hidden="true">
+                  <circle class="ring-track" cx="64" cy="64" r="54"></circle>
+                  <circle class="ring-fill" cx="64" cy="64" r="54"></circle>
+                </svg>
+                <div class="ring-label">
+                  <strong data-role="prob">—</strong>
+                  <span>calibrated</span>
+                </div>
+              </div>
+              <div class="result-meta">
+                <div class="meter-row">
+                  <span>raw</span>
+                  <div class="meter"><i data-role="raw-bar"></i></div>
+                  <b data-role="raw">—</b>
+                </div>
+                <div class="meter-row">
+                  <span>calibrated</span>
+                  <div class="meter"><i data-role="cal-bar"></i></div>
+                  <b data-role="cal">—</b>
+                </div>
+                <p class="threshold">decision at 0.50</p>
+              </div>
+            </div>
+            <div class="result-foot">
+              <span>temperature</span><b data-role="temp">—</b>
+              <span class="foot-dot"></span>
+              <span>test AUC</span><b data-role="auc">—</b>
+            </div>
+          </article>
+
+          <article class="result-card ames" data-endpoint="ames">
+            <div class="result-top">
+              <div>
+                <span class="endpoint-name">Ames</span>
+                <span class="endpoint-sub">mutagenicity</span>
+              </div>
+              <span class="flag" data-role="flag">—</span>
+            </div>
+            <div class="result-main">
+              <div class="ring">
+                <svg viewBox="0 0 128 128" aria-hidden="true">
+                  <circle class="ring-track" cx="64" cy="64" r="54"></circle>
+                  <circle class="ring-fill" cx="64" cy="64" r="54"></circle>
+                </svg>
+                <div class="ring-label">
+                  <strong data-role="prob">—</strong>
+                  <span>calibrated</span>
+                </div>
+              </div>
+              <div class="result-meta">
+                <div class="meter-row">
+                  <span>raw</span>
+                  <div class="meter"><i data-role="raw-bar"></i></div>
+                  <b data-role="raw">—</b>
+                </div>
+                <div class="meter-row">
+                  <span>calibrated</span>
+                  <div class="meter"><i data-role="cal-bar"></i></div>
+                  <b data-role="cal">—</b>
+                </div>
+                <p class="threshold">decision at 0.50</p>
+              </div>
+            </div>
+            <div class="result-foot">
+              <span>temperature</span><b data-role="temp">—</b>
+              <span class="foot-dot"></span>
+              <span>test AUC</span><b data-role="auc">—</b>
+            </div>
+          </article>
+        </div>
+
+        <p class="results-note">
+          Calibrated on a scaffold-disjoint split that never participated in early stopping.
+          A high score means higher predicted risk — not a diagnosis.
+        </p>
+      </section>
+
+      <section class="panel batch-panel">
+      <header class="panel-head">
+        <div>
+          <p class="kicker">03 · BATCH</p>
+          <h2>Screen a small series</h2>
+        </div>
+        <span class="batch-count" id="batch-count">0 / 50</span>
+      </header>
+      <div class="batch-grid">
+        <div class="batch-input">
+          <label class="field-label" for="batch-smiles">One SMILES per line <span>每行一个 SMILES</span></label>
+          <textarea id="batch-smiles" class="smiles-input batch-textarea" rows="7" spellcheck="false"
+            placeholder="CC(=O)Oc1ccccc1C(=O)O&#10;Cn1cnc2c1c(=O)n(C)c(=O)n2C&#10;CC(=O)Nc1ccc(O)cc1"></textarea>
+          <button id="batch-run" class="btn-secondary" type="button">Run batch</button>
+        </div>
+        <div class="batch-output">
+          <div class="batch-head">
+            <span>Results</span>
+            <span id="batch-status" class="structure-status">waiting</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Molecule</th><th>hERG</th><th>DILI</th><th>Ames</th></tr>
+              </thead>
+              <tbody id="batch-body"></tbody>
+            </table>
+            <div id="batch-empty" class="batch-empty">
+              Add a few molecules and the table will fill in here.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-head">
+        <p class="kicker">04 · WHY THIS ONE</p>
+        <h2>Built for a fair read.</h2>
+        <p>
+          Most ADMET demos reuse the validation split for early stopping and calibration.
+          This one keeps them separate, so the numbers you see are not tuned on the answer key.
+        </p>
+      </div>
+      <div class="about-grid">
+        <article class="about-card accent-blue">
+          <span class="about-index">01</span>
+          <h3>Three endpoints</h3>
+          <p>hERG blockade, drug-induced liver injury and Ames mutagenicity, each with its own calibration temperature.</p>
+        </article>
+        <article class="about-card accent-sky">
+          <span class="about-index">02</span>
+          <h3>Nine checkpoints</h3>
+          <p>Three seeds per endpoint are averaged before calibration, smoothing single-run noise without touching the test labels.</p>
+        </article>
+        <article class="about-card accent-deep">
+          <span class="about-index">03</span>
+          <h3>Clean calibration</h3>
+          <p>An internal scaffold-disjoint early-stopping split protects the calibration set. Temperatures: 4.25, 0.86 and 1.61.</p>
+        </article>
+        <article class="about-card accent-navy">
+          <span class="about-index">04</span>
+          <h3>93 released weights</h3>
+          <p>The full benchmark and deployment model family is public, with a SHA-256 manifest and a model card.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>CheMeleon ADMET Studio</span>
+    <span class="footer-dot"></span>
+    <span>CheMeleon + Chemprop 2.3.1</span>
+    <span class="footer-dot"></span>
+    <span>Research use only · not for clinical or regulatory decisions</span>
+  </footer>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

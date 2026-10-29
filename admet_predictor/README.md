@@ -13,8 +13,10 @@ admet_predictor/
 ├── sensitivity/          # external-refit sensitivity artifact (hERG)
 ├── engine.py             # ADMETPredictor
 ├── cli.py                # batch CSV
-├── app_fastapi.py        # HTTP API
-├── app_gradio.py         # browser UI
+├── app_fastapi.py        # HTTP API + studio host
+├── studio.py             # one-command browser launcher
+├── static/               # studio frontend (HTML/CSS/JS)
+├── app_gradio.py         # minimal Gradio UI
 ├── fit_calibrators.py    # refit on a user-supplied clean set
 ├── verify.py             # smoke test
 ├── model_card.md
@@ -47,6 +49,17 @@ python -m admet_predictor.verify
 python -m admet_predictor.cli --input admet_predictor/examples/input.csv --output preds.csv
 ```
 
+Browser studio (opens automatically; single molecule, 2D structure, live
+calibration meters, and a batch table for up to 50 SMILES):
+
+```
+python -m admet_predictor.studio
+```
+
+Use `--no-browser --port 8000` for a headless server. The page is served at
+`http://127.0.0.1:8000/`; `/health`, `/metadata`, `/molecule.png` and
+`/predict` are available alongside it.
+
 Python:
 
 ```python
@@ -71,7 +84,7 @@ curl -X POST http://127.0.0.1:8000/predict \
   -d "{\"smiles\": [\"CCO\"]}"
 ```
 
-Browser UI:
+Minimal Gradio UI, kept as a dependency-light fallback:
 
 ```
 python -m admet_predictor.app_gradio

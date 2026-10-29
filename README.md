@@ -13,7 +13,7 @@ conformal diagnostics, and an external hERG stress test.
 ## Contents
 
 ```
-admet_predictor/     # seed-ensemble inference package (CLI, FastAPI, Gradio)
+admet_predictor/     # seed-ensemble package (CLI, API, Gradio, browser studio)
 data/                # deterministic global and deployment splits
 reports/             # predictions, metrics, figures, and analysis tables
 scripts/             # split construction, training, calibration, table builders
@@ -30,7 +30,11 @@ The nine deployment checkpoints are distributed as the
 pip install -r admet_predictor/requirements.txt
 python -m admet_predictor.verify
 python -m admet_predictor.cli --input admet_predictor/examples/input.csv --output preds.csv
+python -m admet_predictor.studio
 ```
+
+The studio opens at `http://127.0.0.1:8000/` and provides a structure preview,
+per-endpoint calibration meters, and batch scoring for up to 50 SMILES.
 
 See `admet_predictor/README.md` and `admet_predictor/model_card.md`.
 
