@@ -65,6 +65,7 @@ def main() -> None:
         "NOTICE",
         "README.md",
         "RELEASE_NOTES_v1.1.0.md",
+        "RELEASE_NOTES_v1.1.1.md",
         "MANIFEST_weights.csv",
         "SHA256SUMS_models.txt",
         "package_weights.py",
