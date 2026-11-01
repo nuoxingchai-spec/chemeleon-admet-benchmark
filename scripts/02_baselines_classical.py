@@ -19,6 +19,7 @@ from sklearn.metrics import (
 RDLogger.DisableLog("rdApp.*")
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "reports"
+CLASSICAL_RUNS = ROOT / "runs" / "classical"
 GEN = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=2048)
 
 
@@ -72,6 +73,7 @@ def metrics(y, p, threshold=0.5):
 
 
 def main():
+    CLASSICAL_RUNS.mkdir(parents=True, exist_ok=True)
     data = pd.read_csv(ROOT / "data" / "processed" / "global_split.csv", encoding="utf-8-sig")
     rows = []
     for endpoint in ["herg", "dili", "ames"]:
@@ -96,6 +98,12 @@ def main():
             for name, model in models.items():
                 model.fit(x[tr], y[tr])
                 p = model.predict_proba(x[te])[:, 1]
+                if split_name == "test":
+                    pred = sub.loc[te, ["inchikey", "smiles_std", "y"]].copy()
+                    pred["p"] = p
+                    pred.to_csv(
+                        CLASSICAL_RUNS / f"{endpoint}_{name}_test.csv", index=False
+                    )
                 m = metrics(y[te], p)
                 m.update({"endpoint": endpoint, "model": name, "split": split_name})
                 rows.append(m)

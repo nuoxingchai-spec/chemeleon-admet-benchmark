@@ -6,12 +6,20 @@ used by the released models, not the original downloads.
 - `processed/global_split.csv` and `processed/splits/*.csv`: scaffold-disjoint
   assignment of every compound (fit / early stop / calibration / test).
 - `chemprop/{herg,dili,ames}/`: training tables for the benchmark models.
+- `chemprop_second/{herg,dili,ames}/`: training tables for the second
+  scaffold partition used in the split-sensitivity analysis.
 - `chemprop_deploy/{herg,dili,ames}/`: fit / early-stop / calibration / test
   tables for the clean deployment models.
 - `chemprop/lowdata/`: the 48 low-data training subsets.
 - `chemprop/multitask/`: pooled three-endpoint tables.
 - `chemprop/herg_aligned/`: threshold-aligned hERG tables and the cleaned Karim
   external set (`external_clean.csv`).
+
+The pretraining-corpus audit (`scripts/44_pretrain_inchikeys.py`,
+`scripts/45_pretrain_overlap.py`) uses the CheMeleon training SMILES released on
+Zenodo (record 15733574). That corpus is downloaded separately and is not
+redistributed here; `reports/pretrain_overlap.json` records the overlap with
+every split.
 
 To rebuild from scratch, download the Therapeutics Data Commons hERG, DILI,
 Ames, and Karim hERG collections and place the tab-separated files under

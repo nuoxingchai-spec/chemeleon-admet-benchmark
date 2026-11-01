@@ -91,7 +91,7 @@ def fp(smiles):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", required=True, choices=["train", "predict", "classical"])
-    ap.add_argument("--model", default="chemeleon", choices=["chemeleon", "scratch"])
+    ap.add_argument("--model", default="chemeleon", choices=["chemeleon", "scratch", "matched"])
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--run-dir", default=None)
     ap.add_argument("--source", default=None, choices=["aligned", "original"])
@@ -117,6 +117,8 @@ def main():
         ]
         if args.model == "chemeleon":
             cmd += ["--from-foundation", "CHEMELEON"]
+        elif args.model == "matched":
+            cmd += ["--message-hidden-dim", "2048", "--depth", "6"]
         run(cmd, log)
         results = predict_external(save_dir / "model_0" / "best.pt", tag, log)
         rows = record(results, args.model, "aligned", args.seed, {"run": tag}, out_csv)

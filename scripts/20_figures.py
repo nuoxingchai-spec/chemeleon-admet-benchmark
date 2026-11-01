@@ -186,19 +186,18 @@ def fig3_lowdata():
     fig, ax = plt.subplots(figsize=(4.4, 3.1))
     for model, label, color, marker, ls in series:
         d = agg[agg.model == model].sort_values("train_n")
-        ax.errorbar(d.train_n, d["mean"], yerr=d["std"], marker=marker, ms=3.2,
-                    lw=1.1, ls=ls, capsize=2, color=color, label=label)
+        ax.errorbar(d.train_n, d["mean"], yerr=d["std"], marker=marker, ms=4.2,
+                    lw=1.4, ls=ls, capsize=2.5, color=color, label=label)
     ax.set_xscale("log")
     ax.set_xticks([50, 100, 200, 400])
-    ax.set_xticklabels(["50", "100", "200", "400"])
+    ax.set_xticklabels(["50", "100", "200", "400"], fontsize=11)
     ax.xaxis.set_minor_locator(matplotlib.ticker.NullLocator())
-    ax.set_xlabel("Training-set size n (hERG)")
-    ax.set_ylabel("hERG test AUC (mean ± SD, 3 seeds)")
+    ax.set_xlabel("Training-set size n (hERG)", fontsize=12)
+    ax.set_ylabel("hERG test AUC (mean ± SD)", fontsize=12)
+    ax.tick_params(axis="y", labelsize=11)
     ax.set_ylim(0.55, 0.95)
-    ax.legend(loc="upper left", frameon=False)
-    ax.annotate("n = 400: scratch catches up", xy=(396, 0.872), xytext=(225, 0.932),
-                fontsize=7, va="top",
-                arrowprops={"arrowstyle": "-", "lw": 0.6, "color": "0.4"})
+    ax.legend(loc="upper left", frameon=False, fontsize=10, handlelength=1.8,
+              labelspacing=0.35)
     fig.savefig(FIG / "fig3_lowdata.pdf")
     fig.savefig(FIG / "fig3_lowdata.png", dpi=300)
     plt.close(fig)

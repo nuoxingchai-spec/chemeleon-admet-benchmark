@@ -5,6 +5,7 @@ Held-out experiment on the test split:
   - scaffold-grouped 50/50 split: mimics deployment shift between calibration and evaluation
   - valid -> test (the original protocol) for reference
 """
+import argparse
 import sys
 from importlib import import_module
 from pathlib import Path
@@ -45,8 +46,15 @@ def split_scaffold(groups, n, rng):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--alpha", type=float, default=ALPHA)
+    ap.add_argument("--ref", default="reports/conformal_scaffold.csv")
+    ap.add_argument("--out", default="reports/conformal_holdout.csv")
+    args = ap.parse_args()
+
     data = pd.read_csv(ROOT / "data/processed/global_split.csv", encoding="utf-8-sig")
-    ref = pd.read_csv(R / "conformal_scaffold.csv")
+    ref_path = Path(args.ref)
+    ref = pd.read_csv(ref_path if ref_path.is_absolute() else ROOT / ref_path)
     ref = ref[(ref.calibration == "raw") & (ref.conformal == "standard")]
 
     rows = []
@@ -76,7 +84,7 @@ def main():
                         cal, ev = split_scaffold(groups, n, rng)
                     if len(cal) < 10 or len(ev) < 10:
                         continue
-                    q = cs.q_standard(cs.conformal_scores(p[cal], y[cal]), ALPHA)
+                    q = cs.q_standard(cs.conformal_scores(p[cal], y[cal]), args.alpha)
                     c, s = cs.coverage_sets(p[ev], y[ev], q)
                     covs.append(c)
                     sizes.append(s)
@@ -111,8 +119,12 @@ def main():
             print(ep, model, "done", flush=True)
 
     out = pd.DataFrame(rows)
-    out.to_csv(R / "conformal_holdout.csv", index=False)
+    out_path = Path(args.out)
+    out.to_csv(out_path if out_path.is_absolute() else ROOT / out_path, index=False)
     print(out.to_string(index=False))
+
+    if abs(args.alpha - ALPHA) > 1e-9:
+        return
 
     gaps = []
     for ep in ["herg", "dili", "ames"]:

@@ -1,0 +1,86 @@
+{
+ "endpoint": "ames",
+ "model": "deploy CheMeleon (fit / es / calib / test), 3-seed ensemble",
+ "n": {
+  "es": 696,
+  "calib": 712,
+  "test": 732
+ },
+ "auc": {
+  "es": 0.898890641783029,
+  "calib": 0.8951377261236416,
+  "test": 0.820936227444241
+ },
+ "brier": {
+  "es": 0.13140359215224615,
+  "calib": 0.13350975735209225,
+  "test": 0.19603712802894535
+ },
+ "calibration": {
+  "alpha_0.10": {
+   "es_to_test": {
+    "alpha": 0.1,
+    "nominal": 0.9,
+    "q": 0.7443778500000001,
+    "coverage": 0.8237704918032787,
+    "wilson": [
+     0.7944989045649588,
+     0.8496615926699514
+    ],
+    "cluster_bootstrap": [
+     0.7786883165515519,
+     0.871469351984208
+    ],
+    "set_size": 1.2008196721311475
+   },
+   "calib_to_test": {
+    "alpha": 0.1,
+    "nominal": 0.9,
+    "q": 0.7651617333333333,
+    "coverage": 0.842896174863388,
+    "wilson": [
+     0.8147524466906609,
+     0.8674597254863959
+    ],
+    "cluster_bootstrap": [
+     0.8023863468906572,
+     0.8860196798891924
+    ],
+    "set_size": 1.226775956284153
+   }
+  },
+  "alpha_0.20": {
+   "es_to_test": {
+    "alpha": 0.2,
+    "nominal": 0.8,
+    "q": 0.4386862899999999,
+    "coverage": 0.6980874316939891,
+    "wilson": [
+     0.6638667427390839,
+     0.7302398905902916
+    ],
+    "cluster_bootstrap": [
+     0.6280231647866775,
+     0.7777817067421028
+    ],
+    "set_size": 0.9508196721311475
+   },
+   "calib_to_test": {
+    "alpha": 0.2,
+    "nominal": 0.8,
+    "q": 0.4471214333333333,
+    "coverage": 0.7021857923497268,
+    "wilson": [
+     0.6680723121722179,
+     0.7341882515019034
+    ],
+    "cluster_bootstrap": [
+     0.631386233797528,
+     0.7821140482354544
+    ],
+    "set_size": 0.9576502732240437
+   }
+  }
+ },
+ "note": "Within-model contrast: es reuses the early-stopping split; calib is the global validation split, untouched by training and by early stopping and scaffold-disjoint from test."
+}

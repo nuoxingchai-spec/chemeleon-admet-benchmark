@@ -1,0 +1,42 @@
+[
+  {
+    "endpoint": "dili",
+    "seed": 2030,
+    "checks": {
+      "scaffold_disjoint": true,
+      "compound_disjoint": true,
+      "split_counts": {
+        "train": 380,
+        "valid": 47,
+        "test": 47
+      },
+      "split_positives": {
+        "train": 189,
+        "valid": 23,
+        "test": 24
+      },
+      "n_compounds": 474,
+      "n_scaffolds": 345
+    }
+  },
+  {
+    "endpoint": "ames",
+    "seed": 2033,
+    "checks": {
+      "scaffold_disjoint": true,
+      "compound_disjoint": true,
+      "split_counts": {
+        "train": 5798,
+        "valid": 724,
+        "test": 724
+      },
+      "split_positives": {
+        "train": 3231,
+        "valid": 351,
+        "test": 363
+      },
+      "n_compounds": 7246,
+      "n_scaffolds": 2838
+    }
+  }
+]

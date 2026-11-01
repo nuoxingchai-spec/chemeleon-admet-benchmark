@@ -21,10 +21,10 @@ RUNS = ROOT / "runs" / "chemprop"
 REPORTS = ROOT / "reports"
 
 
-def prepare(endpoint: str) -> dict[str, Path]:
-    df = pd.read_csv(DATA, encoding="utf-8-sig")
+def prepare(endpoint: str, split_csv: Path = DATA, data_dir: Path | None = None) -> dict[str, Path]:
+    df = pd.read_csv(split_csv, encoding="utf-8-sig")
     sub = df[df["endpoint"] == endpoint].copy()
-    out = CP_DATA / endpoint
+    out = (data_dir or CP_DATA) / endpoint
     out.mkdir(parents=True, exist_ok=True)
     paths = {}
     for split in ["train", "valid", "test"]:
@@ -66,15 +66,22 @@ def main():
     ap.add_argument("--matched", action="store_true", help="random-init 2048x6 control")
     ap.add_argument("--dropout", type=float, default=None)
     ap.add_argument("--tag", default=None)
+    ap.add_argument("--split-csv", default=None)
+    ap.add_argument("--data-dir", default=None)
+    ap.add_argument("--runs-dir", default=None)
+    ap.add_argument("--report-csv", default=None)
     args = ap.parse_args()
 
-    paths = prepare(args.endpoint)
+    split_csv = Path(args.split_csv) if args.split_csv else DATA
+    data_dir = Path(args.data_dir) if args.data_dir else None
+    runs_root = Path(args.runs_dir) if args.runs_dir else RUNS
+    paths = prepare(args.endpoint, split_csv, data_dir)
     tag = args.tag or f"{args.endpoint}_{args.foundation.lower()}_s{args.seed}"
     if args.matched:
         model_label = "chemprop_matched" + ("_dropout" if args.dropout else "")
     else:
         model_label = f"chemprop_{args.foundation.lower()}"
-    save_dir = RUNS / tag
+    save_dir = runs_root / tag
     save_dir.mkdir(parents=True, exist_ok=True)
     log = save_dir / "train.log"
 
@@ -133,7 +140,7 @@ def main():
                   "seed": args.seed, "split": split})
         rows.append(m)
 
-    out_csv = REPORTS / "chemprop_runs.csv"
+    out_csv = Path(args.report_csv) if args.report_csv else REPORTS / "chemprop_runs.csv"
     df = pd.DataFrame(rows)
     if out_csv.exists():
         old = pd.read_csv(out_csv)

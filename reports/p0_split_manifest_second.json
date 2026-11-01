@@ -1,0 +1,26 @@
+{
+  "endpoint": "herg",
+  "seed": 2027,
+  "algorithm": "random scaffold order + greedy deficit assignment",
+  "fractions": {
+    "train": 0.8,
+    "valid": 0.1,
+    "test": 0.1
+  },
+  "checks": {
+    "scaffold_disjoint": true,
+    "compound_disjoint": true,
+    "split_counts": {
+      "train": 478,
+      "valid": 66,
+      "test": 62
+    },
+    "split_positives": {
+      "train": 352,
+      "valid": 27,
+      "test": 34
+    },
+    "n_compounds": 606,
+    "n_scaffolds": 382
+  }
+}

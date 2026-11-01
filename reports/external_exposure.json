@@ -1,0 +1,18 @@
+{
+  "external_all": {
+    "n": 12491,
+    "exact": 446,
+    "exact_frac": 0.035705708109839085,
+    "connectivity": 603,
+    "connectivity_frac": 0.04827475782563446,
+    "connectivity_clean": 11888
+  },
+  "external_clean": {
+    "n": 11899,
+    "exact": 271,
+    "exact_frac": 0.022775023111185812,
+    "connectivity": 367,
+    "connectivity_frac": 0.030842927977140937,
+    "connectivity_clean": 11532
+  }
+}
