@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\caption{Coverage summaries. Panel A ranges are descriptive extrema, not confidence intervals; per-split calibration/test-component intervals are in the evidence index. Panel B holds calibration size fixed. Its SD describes assignments over three fixed trajectories, not a standard error from 600 independent training runs. The two panels have different model/selection designs.}\label{tab:cp}
+\small
+\begin{tabular}{llrr}
+\toprule
+Endpoint / design & Target & Coverage & Variation\\
+\midrule
+\multicolumn{4}{l}{A: Independent calibration; five-partition mean [min,max]}\\
+hERG & 0.9 & 0.952 & [0.910, 0.974]\\
+hERG & 0.8 & 0.845 & [0.791, 0.909]\\
+DILI & 0.9 & 0.926 & [0.908, 0.942]\\
+DILI & 0.8 & 0.807 & [0.736, 0.855]\\
+Ames & 0.9 & 0.899 & [0.883, 0.932]\\
+Ames & 0.8 & 0.785 & [0.749, 0.822]\\
+\midrule
+\multicolumn{4}{l}{B: Ames reuse diagnostic; three trajectories $\times$200 assignments}\\
+Calibration / evaluation & Target & Coverage & Across-assignment SD\\
+Independent / pool & 0.9 & 0.903 & 0.019\\
+Independent / scaffold & 0.9 & 0.873 & 0.017\\
+Reused / pool & 0.9 & 0.897 & 0.022\\
+Reused / scaffold & 0.9 & 0.866 & 0.018\\
+\bottomrule
+\end{tabular}
+\end{table}

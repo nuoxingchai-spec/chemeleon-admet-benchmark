@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Secondary per-seed AUROC references. Panel A shares the five primary partitions; panel B has only one of them. Within each panel all listed fixed settings are retained. Differing tuning budgets and populations preclude a joint ranking.}\label{tab:secondary}
+\small
+\begin{tabular*}{.92\linewidth}{@{\extracolsep{\fill}}lrrr}
+\toprule
+Model & hERG & DILI & Ames\\
+\midrule
+\multicolumn{4}{l}{A: Classical references; five partitions (RF:25 fits; others:5)}\\
+Random forest & 0.856 & 0.837 & 0.828\\
+Histogram GB & 0.801 & 0.765 & 0.824\\
+Logistic regression & 0.823 & 0.791 & 0.783\\
+\midrule
+\multicolumn{4}{l}{B: ChemBERTa; partition7301 only, three seeds at $10^{-4}$}\\
+Pretrained & 0.872 & 0.787 & 0.807\\
+Matched & 0.771 & 0.731 & 0.781\\
+Scratch & 0.803 & 0.731 & 0.772\\
+\bottomrule
+\end{tabular*}
+\end{table}

@@ -1,0 +1,52 @@
+{
+  "tdc_herg_original": {
+    "url": "https://dataverse.harvard.edu/api/access/datafile/4259588",
+    "fetched_at_utc": "2026-11-03T12:36:59.454647+00:00",
+    "bytes": 50174,
+    "sha256": "dfce97b6a89b710d20c93cf211f005fbee0d8445a60ca7df584cac430798a379",
+    "md5": "76593b328e015398c8724ab4fc58124c",
+    "saved_file": "tdc_herg_original.bin",
+    "http_status": 200
+  },
+  "tdc_dili_original": {
+    "url": "https://dataverse.harvard.edu/api/access/datafile/4259585",
+    "fetched_at_utc": "2026-11-03T12:37:00.015648+00:00",
+    "bytes": 26677,
+    "sha256": "d3961647ff6df9711b6aa4b9fe59d6cbeb40f9d23dd6e9d51d6656e6e6df5ed8",
+    "md5": "0adc55ca6b2556284a3a7b254b4d3182",
+    "saved_file": "tdc_dili_original.bin",
+    "http_status": 200
+  },
+  "tdc_ames_original": {
+    "url": "https://dataverse.harvard.edu/api/access/datafile/4259564",
+    "fetched_at_utc": "2026-11-03T12:37:00.557719+00:00",
+    "bytes": 344128,
+    "sha256": "825c2b4c31c9cec81aa32eb394fd24e6b32ee4959905d4272e56483ecb6f3e16",
+    "md5": "28ab7cd62e8489a2af39f472097e2085",
+    "saved_file": "tdc_ames_original.bin",
+    "http_status": 200
+  },
+  "wang_official_mp6b00471_si_001.xlsx": {
+    "url": "https://ndownloader.figshare.com/files/5513951",
+    "fetched_at_utc": "2026-11-03T12:38:36.219911+00:00",
+    "bytes": 126224,
+    "sha256": "f184be777a817a9d6d43864fe028e7310b7cdef2e9c4f5b0231483e5c268041a",
+    "md5": "e1dee9497f1fda95312acfd4cb61bec5",
+    "saved_file": "wang_official_mp6b00471_si_001.xlsx.bin",
+    "http_status": 200
+  },
+  "official_corpus": {
+    "release": "Zenodo15733575 v1",
+    "file": "cleaned_pubchem_1MM.smiles",
+    "sha256": "dfd996a92ccf3460730f77444de44bd08e747e82266ec29feff4a5040572f4b0",
+    "released_lines": 944296,
+    "raw_unique_keys": 944168,
+    "symmetric_standardized_unique_keys": 943229,
+    "claim_scope": "released-file match; checkpoint training membership unverified"
+  },
+  "official_encoder": {
+    "release": "Zenodo15460715 v2",
+    "file": "chemeleon_mp.pt",
+    "sha256": "c376624d3407204e780a0ed13a9ac097cc9bb1c13ef89cdbc633c1715c183651"
+  }
+}

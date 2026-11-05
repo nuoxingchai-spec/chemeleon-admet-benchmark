@@ -1,0 +1,33 @@
+{
+  "checked_date": "2026-11-05",
+  "venue": "PAKDD2027",
+  "deadline_aoe": "2026-11-20T23:59:00-12:00",
+  "deadline_china": "2026-11-21T19:59:00+08:00",
+  "pages_including_references": 12,
+  "abstract_limit_words": 200,
+  "double_blind": true,
+  "official_sources": {
+    "dates": "https://www.pakdd2027.org/pages/dates",
+    "authors_kit": "https://www.pakdd2027.org/pages/calls/authors-kit",
+    "research": "https://www.pakdd2027.org/pages/calls/research",
+    "applied": "https://www.pakdd2027.org/pages/calls/applied",
+    "ccf_entry": "https://www.ccf.org.cn/c/2017-03-17/587946.shtml",
+    "historical_2025_counts": "https://link.springer.com/book/10.1007/978-981-96-8183-9"
+  },
+  "ai_rule": "only grammatical error correction; disclosure required",
+  "actual_ai_use": "restructuring and drafting beyond grammatical correction",
+  "ai_eligibility": "NOT_ESTABLISHED_UNDER_CURRENT_RULE",
+  "historical_2025_main": {
+    "submissions": 557,
+    "acceptances": 134,
+    "acceptance_rate": 0.24057450628366248,
+    "not_2027_forecast": true
+  },
+  "assessment_subjective_not_calibrated": {
+    "applied_score": 7.2,
+    "research_score": 7.0,
+    "user_acceptance_threshold": 8,
+    "applied_probability_conditional_on_eligible_review": 0.3,
+    "research_probability_conditional_on_eligible_review": 0.2
+  }
+}

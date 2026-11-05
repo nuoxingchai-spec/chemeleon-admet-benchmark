@@ -1,0 +1,20 @@
+{
+  "tables/provenance.tex": {
+    "public_identity_evidence": "reports/SOURCE_FILE_IDENTITIES.json",
+    "local_lineage": "member-level maps are retained privately; not included or approved for public release"
+  },
+  "tables/graph_metrics.tex": [
+    "evidence/reports/all_graph_seed_metrics.csv"
+  ],
+  "tables/secondary.tex": [
+    "evidence/reports/all_classical_seed_metrics.csv",
+    "evidence/reports/chemberta_ensemble_metrics.csv"
+  ],
+  "tables/calibration.tex": [
+    "evidence/reports/coverage_calibration_and_test_uncertainty.csv",
+    "evidence/reports/calibration_factorial_summary.csv"
+  ],
+  "figures/paired_initialization_effects.pdf": [
+    "evidence/reports/joint_group_seed_bootstrap.csv"
+  ]
+}
