@@ -1,0 +1,22 @@
+{
+  "use": "EXPLORATORY_NOT_FORMAL_EVALUATION",
+  "independent_review": "WAIVED_AS_EXECUTION_DEPENDENCY_BY_USER_NOT_APPROVED",
+  "label_semantics": "UNVERIFIED_WHERE_PREVIOUSLY_FLAGGED",
+  "formal_claim_admission": "BLOCKED_PENDING_SOURCE_LABEL_RESOLUTION",
+  "state": "COMPLETE",
+  "issue_count": 39,
+  "all_seven_required_fields": true,
+  "five_reports_present": true,
+  "local_report_links_exist": true,
+  "member_keys_in_public_aggregate_markdown": false,
+  "syntax_files_checked": 45,
+  "protected_factory_sources_unchanged": true,
+  "prediction_role_artifact_hashes_verified": 1721,
+  "complete_canonical_replay_roles": 1841,
+  "independent_sklearn_extreme_drift_case_verified": true,
+  "original_integrity": "COMPLETE",
+  "statistical_contract_tests": "10 tests passed in closure recovery on 2026-11-05; see logs/contract_tests_2026-11-05.txt",
+  "figure_visual_qa": "COMPLETE: seven PNGs inspected, including all three final relabeled raw-BF16 diagnostic plots; see FIGURE_VISUAL_QA.json",
+  "figure_qa_sha256": "24a15f404e99f23b6bcc1875fbcb01c998cd35077c9fa97e398d28aae129f1b2",
+  "finished_at": "2026-11-05T07:52:00.678823+00:00"
+}

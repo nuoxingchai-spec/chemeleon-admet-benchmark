@@ -1,5 +1,18 @@
 # CheMeleon ADMET benchmark
 
+## Research audit and manuscript update (2026-11-05)
+
+The [current research manuscript, aggregate evidence, and audit reports](manuscripts/2026-11-05/README.md)
+supersede broad scientific interpretations in the historical release description
+below. The audit identifies unequal aggregation in old capacity controls,
+identity dependencies, and raw-BF16 replay limitations. Corrected exploratory
+comparisons use matched computation and separately verified FP32 predictions.
+Unresolved source/label evidence and venue AI-writing restrictions are retained.
+The previously released predictor, data, and checkpoints have not been replaced
+or revalidated by this manuscript update.
+
+---
+
 Code, deterministic splits, predictions, and fine-tuned checkpoints for a
 controlled evaluation of a molecular foundation model on three ADMET endpoints:
 hERG blockade, DILI, and Ames mutagenicity. Prepared for anonymous review.

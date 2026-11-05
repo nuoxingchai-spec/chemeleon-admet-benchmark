@@ -1,0 +1,5 @@
+# Preserve evidence bytes, including recorded Windows CRLF endings.
+# SHA256 hashes apply to the Git blobs; CR at line endings is intentional.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.pdf binary
+*.zip binary

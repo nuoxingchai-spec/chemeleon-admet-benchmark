@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\caption{Primary graph metrics: per-seed means over five partitions and five seeds (25 fits/cell), not ensemble metrics. AUROC/AP/PR-AUC/MCC are higher-is-better; Brier/ECE lower-is-better. PR-AUC is trapezoidal, distinct from AP.}\label{tab:metrics}
+\small
+\begin{tabular}{llrrrrrr}
+\toprule
+Endpoint & Model & AUROC & AP & PR-AUC & MCC & Brier & ECE\\
+\midrule
+hERG & Pretrained & 0.912 & 0.951 & 0.950 & 0.573 & 0.124 & 0.121\\
+ & Matched & 0.818 & 0.877 & 0.873 & 0.491 & 0.176 & 0.161\\
+ & Matched+Dropout & 0.824 & 0.880 & 0.876 & 0.491 & 0.168 & 0.148\\
+ & Scratch & 0.811 & 0.870 & 0.866 & 0.349 & 0.181 & 0.142\\
+\midrule
+DILI & Pretrained & 0.856 & 0.886 & 0.884 & 0.577 & 0.161 & 0.142\\
+ & Matched & 0.836 & 0.864 & 0.860 & 0.523 & 0.169 & 0.131\\
+ & Matched+Dropout & 0.838 & 0.863 & 0.859 & 0.533 & 0.166 & 0.130\\
+ & Scratch & 0.808 & 0.848 & 0.843 & 0.505 & 0.185 & 0.129\\
+\midrule
+Ames & Pretrained & 0.840 & 0.844 & 0.843 & 0.530 & 0.171 & 0.087\\
+ & Matched & 0.836 & 0.825 & 0.824 & 0.533 & 0.178 & 0.115\\
+ & Matched+Dropout & 0.836 & 0.827 & 0.827 & 0.529 & 0.177 & 0.112\\
+ & Scratch & 0.832 & 0.819 & 0.818 & 0.528 & 0.174 & 0.088\\
+\bottomrule
+\end{tabular}
+\end{table}

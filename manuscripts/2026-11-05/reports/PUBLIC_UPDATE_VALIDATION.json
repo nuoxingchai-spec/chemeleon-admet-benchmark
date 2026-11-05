@@ -1,0 +1,18 @@
+{
+  "state": "COMPLETE",
+  "publication_scope": "author-authorized manuscript/code/aggregate sharing only",
+  "pages": 12,
+  "original_pdf_sha256": "1976c620ab05fe592ff848e175215ba8349d0323da88729af6e8d740618483e7",
+  "uploaded_pdf_same_bytes_as_local_visually_verified_pdf": true,
+  "public_source_rebuild": "PASS_IDENTICAL_PAGE_TEXT_AND_TABLE_NUMBERS",
+  "aggregate_csv_files": 11,
+  "member_level_files_included": false,
+  "raw_data_or_weights_included": false,
+  "local_absolute_paths_in_public_text": false,
+  "sensitive_token_scan": "PASS_PATTERN_CHECK_NOT_INDEPENDENT_REVIEW",
+  "audit_aggregate_copies": 5,
+  "scientific_independent_approval": false,
+  "formal_source_label_admission": "BLOCKED_WHERE_UNRESOLVED",
+  "venue_ai_eligibility": "NOT_ESTABLISHED",
+  "legacy_artifacts_replaced": false
+}
