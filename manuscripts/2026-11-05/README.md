@@ -40,6 +40,8 @@ then run scripts/build_paper.py. This rebuilds paper tables and the PDF from
 aggregate reports; it does not train models or reconstruct member-level data.
 The public-source rebuild produced identical page text and generated table
 values to the visually inspected local manuscript.
+SHA256 receipts identify the distributed snapshot; a local recompilation may
+change PDF timestamps without changing page text or table values.
 
 The [source ZIP](ADMET_Manuscript_Public_Source.zip) is a convenience archive
 of these files, excluding compiled intermediates and itself.

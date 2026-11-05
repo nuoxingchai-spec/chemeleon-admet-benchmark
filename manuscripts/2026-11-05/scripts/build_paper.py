@@ -10,7 +10,7 @@ TECTONIC=Path(os.environ.get('TECTONIC_EXE',shutil.which('tectonic') or 'tectoni
 claims=[];inputs={}
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def csv(name):
-    p=E/'reports'/name;inputs[str(p)]=sha(p);return pd.read_csv(p)
+    p=E/'reports'/name;inputs['evidence/reports/'+name]=sha(p);return pd.read_csv(p)
 def fmt(v,n=3):return f'{float(v):.{n}f}'
 def macro(name,value,source,selection):
     values.append(r'\newcommand{\%s}{%s}'%(name,value))
@@ -27,7 +27,7 @@ def main():
     completion=json.loads((E/'reports/FINAL_DELIVERY_VALIDATION.json').read_text())
     if completion['state']!='COMPLETE':raise RuntimeError('Experiment delivery incomplete')
     for name in ['paired_initialization_effects','lowdata_learning_curves']:
-        source=E/'reports/figures'/f'{name}.pdf';shutil.copy2(source,P/'figures'/source.name);inputs[str(source)]=sha(source)
+        source=E/'reports/figures'/f'{name}.pdf';shutil.copy2(source,P/'figures'/source.name);inputs['evidence/reports/figures/'+source.name]=sha(source)
     joint=csv('joint_group_seed_bootstrap.csv')
     for ep,prefix in [('herg','Herg'),('dili','Dili'),('ames','Ames')]:
         r=joint[(joint.endpoint==ep)&(joint.contrast=='pretrained-random')].iloc[0]
@@ -100,7 +100,7 @@ def main():
         if k=='zhao2026revisiting':e=e.replace('Zhao, D. and Zhu, Y. and others','Zhao, Donghai and Zhu, Yuchen and Wu, Zhenxing and Wan, Yue and Liu, Xiaonan and Li, Shuaiyan and Xu, Hongxia and Hou, Tingjun and Hsieh, Chang-Yu')
         selected.append(e)
     (P/'refs.bib').write_text('\n\n'.join(selected)+'\n',encoding='utf-8')
-    inputs[str(OLD/'refs.bib')]=sha(OLD/'refs.bib')
+    inputs['paper/refs.bib']=sha(OLD/'refs.bib')
     (OUT/'reports/CLAIM_ARTIFACT_MAP.json').write_text(json.dumps({'scope':'aggregate manuscript numbers only; inherited source labels; no independent approval','claims':claims,'inputs_sha256':inputs,'bibliography_entries':len(keys)},indent=2),encoding='utf-8')
     cmd=[str(TECTONIC),'--keep-logs','--keep-intermediates','main.tex']
     r=subprocess.run(cmd,cwd=P,capture_output=True,text=True,encoding='utf-8')

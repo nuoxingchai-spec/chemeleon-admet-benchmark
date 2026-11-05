@@ -1,5 +1,6 @@
 {
   ".gitattributes": "528b613b1d44d577d5dfbb2de0add77c28d066a61127feaabeaab859c4d06119",
+  ".gitignore": "579356d17b9b3bd54167ad24a0dd43e5595da392f78222c65b4a22868d75feda",
   "audit/DATA_PROVENANCE_AUDIT.md": "94ce8c4257f9c2de7ee29da751813b94b08a228b829c31c225b1569c0c79394e",
   "audit/EXPERIMENT_UPGRADE_PLAN.md": "72ad776720c2a7b50d9ea2c01dfa5db296d1faf072824a2150ec5a5dfdd459a5",
   "audit/PAPER_CLAIM_EVIDENCE_MATRIX.md": "0842ed314f9b3f9677ff2c0160fed702e292757a4143cdabcbe617fd2820b04c",
@@ -32,7 +33,7 @@
   "paper/tables/provenance.tex": "ab40df5e27826ef072b4e5e4c5a8b20d10685c30f9f0093e89becedff17a4fde",
   "paper/tables/secondary.tex": "a5531fee37c3f208b2272336005f2f6fcb355e79851727d1d4f12989eba93775",
   "paper/values.tex": "559bb68b1bb4498d90df470c02d4090226d15a71e1da4ca27f1e31d4800404d9",
-  "README.md": "1b179b63d6a085b97afa2d5b8e982164ee7bbdeb4ea69e860bd9d5e87eb3306e",
+  "README.md": "dd207c5df5ceda50619b306a97ff5dcbd111ad7fef32b9eca5adfd033cfd6b04",
   "rebuild_from_bundle.ps1": "1823eb0f6dc9f758d044fcf3fc7ba57855086fb203df293d74846749b62568b4",
   "reports/AUDIT_COPY_SOURCE_SHA256.json": "93261f2b7d937b62cf0def52594de10f892ec2864e327bac77444ae2e61defb4",
   "reports/CLAIM_ARTIFACT_MAP.json": "c68f80ce25c3f667eb6efd97fb73297f8c91289755f54c71c20e357b77503edb",
@@ -40,5 +41,5 @@
   "reports/SOURCE_FILE_IDENTITIES.json": "21e75530b2abc09896c62ef5f0adea8f46eca7fe7f350b4c576056ed6d3ec97b",
   "reports/TABLE_ARTIFACT_INDEX.json": "da48a912d282eb3ade7b51131373ad0cfeeaab39b6d8ae73fc1c79bc3f9c9b71",
   "reports/VENUE_FACTS_AND_ASSESSMENT.json": "e7fd8a9246e8361eff7921885bbb696775660d78e4976f7f3c6408022594e824",
-  "scripts/build_paper.py": "0968cf6313aea8f0a0e173dceb1875c9ebec487e6181c06b8f833df9dcdeae75"
+  "scripts/build_paper.py": "bb6b03867c6e0020db4963e3d4d0e44252b4892e684f763282e32dbaa0611408"
 }
